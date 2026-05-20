@@ -1,0 +1,222 @@
+/* Sikkim News Aggregator — Premium Print Newspaper Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --paper-bg: #fdfcf7;      /* Elegant warm soft cream paper */
+    --paper-dark: #f6f4eb;    /* Slightly darker paper tint for cards on hover */
+    --ink-dark: #1c1917;      /* Warm stone-900 (deep charcoal print ink) */
+    --ink-gray: #44403c;      /* Warm stone-700 (meta text) */
+    --ink-light: #78716c;     /* Warm stone-500 (light annotations) */
+    --ink-border: #d6d3d1;    /* Warm stone-300 (fine print separator) */
+    --ink-accent: #991b1b;    /* Rich traditional deep red/burgundy */
+}
+
+body {
+    background-color: var(--paper-bg);
+    color: var(--ink-dark);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.App {
+    background-color: var(--paper-bg);
+    color: var(--ink-dark);
+}
+
+.font-serif-display {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.font-sans-ui {
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Classical Print Dividers */
+.double-border {
+    border-top: 4px double var(--ink-dark);
+}
+
+.double-border-bottom {
+    border-bottom: 4px double var(--ink-dark);
+}
+
+.divider-rule {
+    border-top: 1px solid var(--ink-dark);
+}
+
+.thick-rule {
+    border-top: 2.5px solid var(--ink-dark);
+}
+
+.fine-rule {
+    border-top: 1px solid var(--ink-border);
+}
+
+.eyebrow {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--ink-gray);
+}
+
+/* Classical Newspaper Header Ears */
+.ear-text {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--ink-gray);
+    line-height: 1.35;
+}
+
+/* Drop Cap for Hero Story */
+.drop-cap::first-letter {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 4.25rem;
+    float: left;
+    line-height: 0.82;
+    margin-top: 0.12rem;
+    margin-right: 0.55rem;
+    font-weight: 700;
+    color: var(--ink-dark);
+}
+
+/* News Cards & Hover Details */
+.news-card {
+    transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    border: 1px solid var(--ink-border) !important;
+    background-color: var(--paper-bg);
+}
+
+.news-card:hover {
+    background-color: var(--paper-dark) !important;
+    border-color: var(--ink-dark) !important;
+    box-shadow: 0 6px 16px rgba(28, 25, 23, 0.04) !important;
+    transform: translateY(-2px);
+}
+
+.hero-news-card {
+    transition: all 250ms ease;
+    padding: 0 !important;
+    margin-bottom: 2.5rem !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.hero-news-card:hover {
+    background: transparent !important;
+}
+
+/* Premium Refresh Button style */
+.refresh-button {
+    background-color: var(--ink-dark) !important;
+    color: #ffffff !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-size: 10px !important;
+    padding: 0.5rem 1.25rem !important;
+    height: 2.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 150ms ease !important;
+}
+
+.refresh-button:hover {
+    background-color: var(--ink-gray) !important;
+}
+
+.refresh-button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.headline-link {
+    background-image: linear-gradient(var(--ink-dark), var(--ink-dark));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 350ms ease;
+}
+
+.news-card:hover .headline-link {
+    background-size: 100% 1px;
+}
+
+/* Centered print-style category bar */
+.print-cat-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-gray);
+    padding: 0.25rem 0.6rem;
+    transition: all 150ms ease;
+    border-bottom: 2px solid transparent;
+}
+
+.print-cat-btn:hover {
+    color: var(--ink-accent);
+}
+
+.print-cat-btn[data-active="true"] {
+    color: var(--ink-accent);
+    border-bottom-color: var(--ink-accent);
+}
+
+/* Live indicators */
+.live-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--ink-accent);
+    border-radius: 9999px;
+    display: inline-block;
+    animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.35;
+        transform: scale(1.35);
+    }
+}
+
+.fade-in {
+    animation: fade-in 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+/* Scrollbar behaviors */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
