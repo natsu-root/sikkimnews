@@ -15,7 +15,7 @@ The backend is built using FastAPI and Python.
 
 1. **Open a terminal** and navigate to the backend directory:
    ```bash
-   cd e:\Abi_Drive\SikkimNews\backend
+   cd backend
    ```
 
 2. **Activate the virtual environment**:
@@ -46,7 +46,7 @@ The frontend is a React application powered by Vite.
 
 1. **Open a new terminal** (keep the backend running in the first one) and navigate to the frontend directory:
    ```bash
-   cd e:\Abi_Drive\SikkimNews\frontend
+   cd frontend
    ```
 
 2. **Install the Node.js dependencies**:
